@@ -1,0 +1,37 @@
+export const skills = {
+  Frontend: [
+    "HTML5",
+    "CSS3",
+    "JavaScript (ES6+)",
+    "TypeScript",
+    "React.js",
+    "Next.js",
+    "Vue.js",
+  ],
+  Styling: [
+    "Tailwind CSS",
+    "Material UI (MUI)",
+    "React Bootstrap",
+    "Radix UI",
+    "Responsive Design",
+  ],
+  Backend: [
+    "Node.js",
+    "Express.js",
+    "Nest.js",
+    "MongoDB",
+    "Mongoose",
+    "REST APIs",
+    "GraphQL",
+  ],
+  "State & Data": ["SWR", "Axios"],
+  Animation: ["Framer Motion", "React Spring", "CSS Animations"],
+  Tools: [
+    "Git",
+    "GitHub",
+    "VS Code",
+    "Postman",
+    "REST Client",
+    "JWT Authentication",
+  ],
+};
