@@ -44,7 +44,6 @@ const services = [
   "Frontend Development",
   "Backend Development",
   "API Development",
-
   "Performance Optimization",
 ];
 

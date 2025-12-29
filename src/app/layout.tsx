@@ -12,6 +12,9 @@ export const metadata = {
     "Professional portfolio showcasing MERN stack expertise, enterprise projects, and technical skills",
   keywords:
     "MERN Stack, React, Node.js, MongoDB, Full Stack Developer, Portfolio",
+  icons: {
+    icon: "icon.svg",
+  },
 };
 
 export default function RootLayout({
