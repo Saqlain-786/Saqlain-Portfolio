@@ -105,7 +105,7 @@ export default function Header() {
                     borderRadius: "50%",
                   }}
                 />
-                SA
+                MS
               </Box>
             </motion.div>
 

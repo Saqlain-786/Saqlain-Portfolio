@@ -19,7 +19,7 @@ export default function Contact() {
       <Button
         variant="contained"
         sx={{ mt: 4, bgcolor: "#020617", color: "white" }}
-        href="mailto:ubaid.udr@gmail.com"
+        href="mailto:ksaqlain429@gmail.com"
       >
         Contact Me
       </Button>

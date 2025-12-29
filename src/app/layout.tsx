@@ -1,4 +1,3 @@
-import ScrollProgress from "@/components/ui/scroll-progress";
 import Footer from "@/layout/footer";
 import Header from "@/layout/header";
 import theme from "@/theme/theme";
@@ -8,7 +7,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Sayed Ubaid Ali | MERN Stack Developer & Software Engineer",
+  title: "Mohammad Saqlain | MERN Stack Developer & Software Engineer",
   description:
     "Professional portfolio showcasing MERN stack expertise, enterprise projects, and technical skills",
   keywords:
@@ -29,7 +28,7 @@ export default function RootLayout({
       <body style={{ overflowX: "hidden" }}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <ScrollProgress />
+
           <Header />
           <Container
             maxWidth="lg"

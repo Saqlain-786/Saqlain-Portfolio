@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Education() {
   const education = {
-    degree: "Bachelor of Computer Applications (BCA)",
+    degree: "Bachelor of Arts (BA)",
     university: "Mohanlal Sukhadia University, Udaipur",
     period: "2023 – 2026 (Expected)",
   };

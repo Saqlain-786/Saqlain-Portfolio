@@ -32,7 +32,7 @@ export default function About() {
                 mb: 4,
               }}
             >
-              Detail-oriented MERN Stack Developer with 1.9+ years of Frontend
+              Detail-oriented MERN Stack Developer with 2+ years of Frontend
               and 6+ months of Backend hands-on experience through internship
               and junior developer role at Burak Information Technology. Skilled
               in building scalable, responsive, and user-centric web

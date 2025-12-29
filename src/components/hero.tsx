@@ -1,22 +1,25 @@
 "use client";
+
+import AddIcCallIcon from "@mui/icons-material/AddIcCall";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import DownloadIcon from "@mui/icons-material/Download";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import MailIcon from "@mui/icons-material/Mail";
 import {
-  Avatar,
   Box,
   Button,
-  Chip,
   Container,
   Stack,
   Typography,
+  alpha,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import ParticlesBackground from "./ui/particles-background";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import AddIcCallIcon from "@mui/icons-material/AddIcCall";
-import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import MailIcon from "@mui/icons-material/Mail";
 
 export default function Hero() {
   const theme = useTheme();
@@ -31,6 +34,8 @@ export default function Hero() {
         position: "relative",
         overflow: "hidden",
         pt: { xs: 10, md: 0 },
+        bgcolor: "background.default",
+        marginTop: 7,
       }}
     >
       <ParticlesBackground />
@@ -39,9 +44,9 @@ export default function Hero() {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "1.2fr 0.8fr" },
+            gridTemplateColumns: { xs: "1fr", md: "1.1fr 0.9fr" },
             alignItems: "center",
-            gap: { xs: 6, md: 8 },
+            gap: { xs: 6, md: 10 },
             position: "relative",
             zIndex: 1,
           }}
@@ -52,258 +57,299 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <Chip
-                label="MERN Stack Developer"
-                color="primary"
-                sx={{
-                  mb: 3,
-                  fontWeight: 600,
-                  px: 1,
-                  fontSize: "0.9rem",
-                  bgcolor: "rgba(99, 102, 241, 0.1)",
-                }}
-              />
-            </motion.div>
+            {/* <Chip
+              label="🚀 MERN Stack Developer"
+              sx={{
+                mb: 3,
+                fontWeight: 600,
+                px: 1.5,
+                fontSize: "0.9rem",
+                bgcolor: alpha(theme.palette.primary.main, 0.15),
+                color: "primary.main",
+                borderRadius: 2,
+              }}
+            /> */}
 
             <Typography
-              variant="h1"
               sx={{
-                fontSize: {
-                  xs: "2.5rem",
-                  sm: "3.5rem",
-                  md: "4rem",
-                  lg: "4.5rem",
-                },
+                fontSize: { xs: "2.6rem", sm: "3.4rem", md: "3rem" },
                 fontWeight: 900,
                 lineHeight: 1.1,
+                mb: 2,
+                color: "text.primary",
+              }}
+            >
+              Mohammad Saqlain
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: { xs: "1.4rem", md: "2rem" },
+                fontWeight: 700,
+                color: "primary.main",
                 mb: 3,
               }}
             >
-              Sayed Ubaid Ali
-              <Box
-                component="span"
-                sx={{
-                  display: "block",
-                  fontSize: { xs: "1.8rem", md: "2.5rem" },
-                  color: "primary.main",
-                  mt: 1,
-                }}
-              >
-                Full Stack Developer
-              </Box>
+              Full Stack Developer
             </Typography>
 
             <Typography
               sx={{
-                fontSize: "1.2rem",
+                fontSize: "1.1rem",
                 color: "text.secondary",
                 maxWidth: 600,
                 lineHeight: 1.8,
-                mb: 4,
+                mb: 5,
               }}
             >
-              Detail-oriented MERN Stack Developer with 1.9+ years of hands-on
-              experience building scalable web applications. Currently working
-              at Burak Information Technology while pursuing BCA at Mohanlal
-              Sukhadia University.
+              Detail-oriented MERN Stack Developer with 2+ years of experience
+              building scalable, high-performance web applications. Currently
+              working at Burak Information Technology and pursuing BA from
+              Mohanlal Sukhadia University.
             </Typography>
 
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={2} mt={5}>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+              <Button
+                variant="contained"
+                size="large"
+                href="#projects"
+                endIcon={<ArrowForwardIcon />}
+                sx={{
+                  px: 4,
+                  py: 1.8,
+                  borderRadius: 3,
+                  fontWeight: 700,
+                  fontSize: "1rem",
+                  bgcolor: "primary.main",
+                  color: "white",
+                  boxShadow: `0 4px 20px ${alpha(
+                    theme.palette.primary.main,
+                    0.4
+                  )}`,
+                  "&:hover": {
+                    bgcolor: "primary.dark",
+                    boxShadow: `0 6px 30px ${alpha(
+                      theme.palette.primary.main,
+                      0.5
+                    )}`,
+                    transform: "translateY(-2px)",
+                  },
+                }}
               >
-                <Button
-                  variant="contained"
-                  size="large"
-                  href="#projects"
-                  endIcon={<ArrowForwardIcon />}
-                  sx={{
-                    px: 4,
-                    py: 1.5,
-                    borderRadius: 3,
-                    fontSize: "1rem",
-                    fontWeight: 600,
-                  }}
-                >
-                  View Projects
-                </Button>
-              </motion.div>
+                View Projects
+              </Button>
 
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <Button
+                variant="outlined"
+                size="large"
+                href="/saqlain_resume.pdf"
+                download
+                startIcon={<DownloadIcon />}
+                sx={{
+                  px: 4,
+                  py: 1.8,
+                  borderRadius: 3,
+                  fontWeight: 700,
+                  fontSize: "1rem",
+                  borderWidth: 2,
+                  borderColor: "primary.main",
+                  color: "primary.main",
+                  bgcolor: alpha(theme.palette.primary.main, 0.05),
+                  "&:hover": {
+                    borderWidth: 2,
+                    borderColor: "primary.dark",
+                    bgcolor: alpha(theme.palette.primary.main, 0.1),
+                    transform: "translateY(-2px)",
+                  },
+                }}
               >
-                <Button
-                  variant="outlined"
-                  size="large"
-                  href="/Ubaid_Resume.pdf" // Make sure this file exists in public folder
-                  download
-                  startIcon={<DownloadIcon />}
-                  sx={{
-                    px: 4,
-                    py: 1.5,
-                    borderRadius: 3,
-                    fontSize: "1rem",
-                    fontWeight: 600,
-                  }}
-                >
-                  Download Resume
-                </Button>
-              </motion.div>
+                Download Resume
+              </Button>
             </Stack>
 
-            {/* Stats */}
-            <Box sx={{ display: "flex", gap: 4, mt: 8, flexWrap: "wrap" }}>
+            {/* STATS */}
+            <Stack direction="row" spacing={4} mt={7} flexWrap="wrap">
               {[
-                { value: "1.9+", label: "Years Experience" },
+                { value: "2+", label: "Years Experience" },
                 { value: "5+", label: "Live Projects" },
-                { value: "BCA", label: "Currently Pursuing" },
-              ].map((stat, index) => (
+                { value: "BA", label: "Currently Pursuing" },
+              ].map((stat, i) => (
                 <motion.div
-                  key={stat.label}
+                  key={i}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
+                  transition={{ delay: 0.4 + i * 0.1 }}
                 >
-                  <Box>
+                  <Box
+                    sx={{
+                      p: 2,
+                      borderRadius: 2,
+                      bgcolor: alpha(theme.palette.primary.main, 0.05),
+                      border: `1px solid ${alpha(
+                        theme.palette.primary.main,
+                        0.1
+                      )}`,
+                    }}
+                  >
                     <Typography
-                      variant="h3"
-                      sx={{ fontWeight: 800, color: "primary.main" }}
+                      variant="h4"
+                      fontWeight={800}
+                      color="primary.main"
                     >
                       {stat.value}
                     </Typography>
-                    <Typography color="text.secondary">{stat.label}</Typography>
+                    <Typography color="text.secondary" variant="body2">
+                      {stat.label}
+                    </Typography>
                   </Box>
                 </motion.div>
               ))}
-            </Box>
+            </Stack>
           </motion.div>
 
-          {/* RIGHT PROFILE CARD - Update this to match resume contact info */}
+          {/* RIGHT CARD */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
           >
             <Box
               sx={{
-                position: "relative",
-                "&::before": {
-                  content: '""',
-                  position: "absolute",
-                  top: -20,
-                  left: -20,
-                  right: 20,
-                  bottom: 20,
-                  background: `linear-gradient(135deg, ${theme.palette.primary.main}20, ${theme.palette.secondary.main}20)`,
-                  borderRadius: 2,
-                  zIndex: -1,
-                },
+                backdropFilter: "blur(16px)",
+                bgcolor: alpha(theme.palette.background.paper, 0.95),
+                border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
+                borderRadius: 4,
+                p: 4,
+                textAlign: "center",
+                boxShadow: `0 20px 60px ${alpha(
+                  theme.palette.primary.main,
+                  0.15
+                )}`,
               }}
             >
+              {/* Smaller Profile Picture */}
               <Box
                 sx={{
-                  bgcolor: "background.paper",
-                  p: { xs: 3, md: 4 },
-                  borderRadius: 2,
-                  textAlign: "center",
-                  border: "1px solid rgba(99, 102, 241, 0.2)",
-                  boxShadow: "0 20px 60px rgba(99, 102, 241, 0.15)",
+                  width: 100,
+                  height: 100,
+                  mx: "auto",
+                  mb: 3,
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  border: `3px solid ${theme.palette.primary.main}`,
+                  position: "relative",
+                  boxShadow: `0 8px 32px ${alpha(
+                    theme.palette.primary.main,
+                    0.3
+                  )}`,
                 }}
               >
-                <Avatar
-                  src="/profile.jpeg" // Make sure this image exists
-                  sx={{
-                    width: { xs: 100, md: 120 },
-                    height: { xs: 100, md: 120 },
-                    mx: "auto",
-                    mb: 3,
-                    border: "4px solid",
-                    borderColor: "primary.main",
-                    boxShadow: "0 0 40px rgba(99, 102, 241, 0.3)",
-                  }}
+                <Image
+                  src="/saqlain_profile.jpeg"
+                  alt="Saqlain"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  priority
+                  sizes="(max-width: 768px) 100px, 100px"
                 />
-
-                <Typography variant="h5" fontWeight={800} gutterBottom>
-                  Contact Info
-                </Typography>
-
-                <Stack spacing={2} mt={3}>
-                  {[
-                    {
-                      icon: <LocationOnIcon />,
-                      text: "Udaipur, Rajasthan, India",
-                    },
-                    { icon: <AddIcCallIcon />, text: "+91-7878053525" },
-                    { icon: <MailIcon />, text: "ubaid.udr@gmail.com" },
-                    {
-                      icon: <BusinessCenterIcon />,
-                      text: "Burak Information Technology",
-                    },
-                  ].map((item, index) => (
-                    <Box
-                      key={index}
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "flex-start",
-                        gap: 1.5,
-                        textAlign: "left",
-                      }}
-                    >
-                      <Box sx={{ fontSize: "1.1rem", minWidth: "24px" }}>
-                        {item.icon}
-                      </Box>
-                      <Typography fontSize="0.9rem">{item.text}</Typography>
-                    </Box>
-                  ))}
-                </Stack>
-
-                {/* Social Links - Use your actual links */}
-                <Stack
-                  direction="row"
-                  spacing={2}
-                  justifyContent="center"
-                  mt={4}
-                  pt={3}
-                  sx={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
-                >
-                  <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.95 }}>
-                    <Button
-                      variant="text"
-                      size="small"
-                      href="https://github.com/Ubaid-ali786"
-                      target="_blank"
-                      sx={{
-                        color: "text.secondary",
-                        "&:hover": { color: "primary.main" },
-                      }}
-                    >
-                      GitHub
-                    </Button>
-                  </motion.div>
-                  <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.95 }}>
-                    <Button
-                      variant="text"
-                      size="small"
-                      href="https://linkedin.com/in/ubaid-ali-bab868309"
-                      target="_blank"
-                      sx={{
-                        color: "text.secondary",
-                        "&:hover": { color: "primary.main" },
-                      }}
-                    >
-                      LinkedIn
-                    </Button>
-                  </motion.div>
-                </Stack>
               </Box>
+
+              <Typography
+                variant="h6"
+                fontWeight={800}
+                mb={3}
+                color="text.primary"
+              >
+                Contact Information
+              </Typography>
+
+              <Stack spacing={2}>
+                {[
+                  { icon: <LocationOnIcon />, text: "Udaipur, Rajasthan" },
+                  { icon: <AddIcCallIcon />, text: "+91 8005769678" },
+                  { icon: <MailIcon />, text: "ksaqlan429@gmail.com" },
+                  {
+                    icon: <BusinessCenterIcon />,
+                    text: "Burak Information Technology",
+                  },
+                ].map((item, i) => (
+                  <Box
+                    key={i}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1.5,
+                      justifyContent: "flex-start",
+                      pl: 2,
+                    }}
+                  >
+                    <Box sx={{ color: "primary.main", minWidth: 24 }}>
+                      {item.icon}
+                    </Box>
+                    <Typography
+                      fontSize="0.95rem"
+                      textAlign="left"
+                      color="text.primary"
+                    >
+                      {item.text}
+                    </Typography>
+                  </Box>
+                ))}
+              </Stack>
+
+              {/* Social Links - Fixed Visibility */}
+              <Stack direction="row" spacing={2} justifyContent="center" mt={4}>
+                <Button
+                  href="https://github.com/Saqlain-786"
+                  target="_blank"
+                  variant="contained"
+                  startIcon={<GitHubIcon />}
+                  sx={{
+                    borderRadius: 2,
+                    fontWeight: 600,
+                    fontSize: "0.9rem",
+                    px: 3,
+                    py: 1,
+                    bgcolor: "#333",
+                    color: "white",
+                    "&:hover": {
+                      bgcolor: "#000",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  GitHub
+                </Button>
+                <Button
+                  href="https://www.linkedin.com/in/saqlain-khan-236856320/"
+                  target="_blank"
+                  variant="contained"
+                  startIcon={<LinkedInIcon />}
+                  sx={{
+                    borderRadius: 2,
+                    fontWeight: 600,
+                    fontSize: "0.9rem",
+                    px: 3,
+                    py: 1,
+                    bgcolor: "#0077B5",
+                    color: "white",
+                    "&:hover": {
+                      bgcolor: "#005582",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  LinkedIn
+                </Button>
+              </Stack>
+
+              {/* Icon Buttons for Social Links */}
+              <Stack
+                direction="row"
+                spacing={1}
+                justifyContent="center"
+                mt={3}
+              ></Stack>
             </Box>
           </motion.div>
         </Box>

@@ -6,10 +6,10 @@ export default function Experience() {
   const experience = {
     title: "MERN Stack Junior Developer",
     company: "Burak Information Technology",
-    period: "Nov 2023 – Present",
+    period: "Sept 2023 – Present",
     location: "Udaipur, Rajasthan",
     duration:
-      "(3 Months Intern → Junior Developer | Total Experience: ~1.9 Years)",
+      "(4 Months Intern → Junior Developer | Total Experience: ~2 Years)",
     responsibilities: [
       "Developed and maintained scalable frontend applications using React.js and Next.js",
       "Designed and implemented RESTful APIs using Node.js and Express.js",

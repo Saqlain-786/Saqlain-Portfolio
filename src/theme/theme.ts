@@ -3,120 +3,73 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
-    mode: "dark",
+    mode: "light",
     primary: {
-      main: "#6366F1",
-      light: "#818CF8",
-      dark: "#4F46E5",
+      main: "#1A1A1A", // Sophisticated Matte Black
+      light: "#404040",
+      dark: "#000000",
     },
     secondary: {
-      main: "#22D3EE",
-      light: "#67E8F9",
-      dark: "#0EA5E9",
+      main: "#B99362", // Classy Bronze / Champagne Gold
+      light: "#D4B996",
+      dark: "#8C6A42",
     },
     background: {
-      default: "#0B1020",
-      paper: "rgba(17, 24, 39, 0.9)",
+      default: "#FDFDFD", // Clean Pure White
+      paper: "rgba(255, 255, 255, 0.7)", 
     },
     text: {
-      primary: "#F8FAFC",
-      secondary: "#94A3B8",
-      disabled: "#64748B",
+      primary: "#1A1A1A",
+      secondary: "#666666",
     },
-    divider: "rgba(255, 255, 255, 0.1)",
+    divider: "rgba(0, 0, 0, 0.05)",
   },
   typography: {
-    fontFamily: `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`,
+    // Serif font heading ke liye classy lagta hai
+    fontFamily: `'Inter', 'Playfair Display', serif`,
     h1: {
-      fontWeight: 900,
-      fontSize: "3.5rem",
-      letterSpacing: "-0.02em",
-      lineHeight: 1.1,
+      fontWeight: 700,
+      fontSize: "4rem",
+      letterSpacing: "-0.04em",
+      fontFamily: "'Playfair Display', serif", // Classy Touch
     },
     h2: {
-      fontWeight: 800,
-      fontSize: "3rem",
-      letterSpacing: "-0.01em",
-    },
-    h3: {
-      fontWeight: 700,
-      fontSize: "2.25rem",
-    },
-    h4: {
-      fontWeight: 700,
-      fontSize: "1.875rem",
-    },
-    h5: {
       fontWeight: 600,
-      fontSize: "1.5rem",
-    },
-    h6: {
-      fontWeight: 600,
-      fontSize: "1.25rem",
-    },
-    body1: {
-      fontSize: "1rem",
-      lineHeight: 1.7,
-    },
-    body2: {
-      fontSize: "0.875rem",
-      lineHeight: 1.6,
+      fontFamily: "'Playfair Display', serif",
     },
     button: {
-      textTransform: "none",
-      fontWeight: 600,
-      fontSize: "0.95rem",
+      textTransform: "uppercase", // Minimalist look
+      fontWeight: 500,
+      letterSpacing: "0.1em",
+      fontSize: "0.8rem",
     },
   },
   shape: {
-    borderRadius: 12,
+    borderRadius: 4, // Sharp corners zyada premium aur professional lagte hain
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        html: {
-          scrollBehavior: "smooth",
-        },
         body: {
-          overflowX: "hidden",
-        },
-        "::-webkit-scrollbar": {
-          width: 10,
-        },
-        "::-webkit-scrollbar-track": {
-          background: "#0B1020",
-        },
-        "::-webkit-scrollbar-thumb": {
-          background: "#6366F1",
-          borderRadius: 5,
-        },
-      },
-    },
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          backdropFilter: "blur(10px)",
-          backgroundImage: "none",
+          backgroundColor: "#FDFDFD",
+          backgroundImage: "linear-gradient(180deg, #FDFDFD 0%, #F5F5F5 100%)",
         },
       },
     },
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
-          transition: "all 0.3s ease",
+          borderRadius: 0, // Flat design for high-end feel
+          padding: "12px 32px",
+          border: "1px solid #1A1A1A",
         },
         contained: {
-          boxShadow: "0 4px 14px rgba(99, 102, 241, 0.25)",
+          backgroundColor: "#1A1A1A",
+          color: "#FFF",
           "&:hover": {
-            boxShadow: "0 6px 20px rgba(99, 102, 241, 0.35)",
-            transform: "translateY(-2px)",
-          },
-        },
-        outlined: {
-          borderWidth: 2,
-          "&:hover": {
-            borderWidth: 2,
+            backgroundColor: "#B99362",
+            border: "1px solid #B99362",
+            boxShadow: "none",
           },
         },
       },
@@ -124,10 +77,13 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 16,
-          transition: "all 0.3s ease",
+          boxShadow: "none",
+          border: "1px solid #EEE",
+          borderRadius: 0,
+          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
           "&:hover": {
-            transform: "translateY(-8px)",
+            borderColor: "#B99362",
+            transform: "translateY(-4px)",
           },
         },
       },

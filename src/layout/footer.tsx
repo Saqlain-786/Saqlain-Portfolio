@@ -20,14 +20,14 @@ const socialLinks = [
   {
     icon: <GitHubIcon />,
     label: "GitHub",
-    href: "https://github.com/Ubaid-ali786",
+    href: "https://github.com/Saqlain-786",
   },
   {
     icon: <LinkedInIcon />,
     label: "LinkedIn",
-    href: "https://linkedin.com/in/ubaid-ali-bab868309",
+    href: "https://www.linkedin.com/in/saqlain-khan-236856320/",
   },
-  { icon: <EmailIcon />, label: "Email", href: "mailto:ubaid.udr@gmail.com" },
+  { icon: <EmailIcon />, label: "Email", href: "mailto:ksaqlain429@gmail.com" },
 ];
 
 const quickLinks = [
@@ -44,7 +44,7 @@ const services = [
   "Frontend Development",
   "Backend Development",
   "API Development",
-  "Database Design",
+
   "Performance Optimization",
 ];
 
@@ -82,12 +82,14 @@ export default function Footer() {
                     justifyContent: "center",
                   }}
                 >
-                  <Typography sx={{ fontWeight: 900, fontSize: "1.2rem" }}>
-                    SA
+                  <Typography
+                    sx={{ fontWeight: 900, fontSize: "1.2rem", color: "white" }}
+                  >
+                    MS
                   </Typography>
                 </Box>
                 <Typography variant="h6" fontWeight={800}>
-                  Sayed Ubaid Ali
+                  Mohammad Saqlain
                 </Typography>
               </Box>
 
@@ -110,11 +112,8 @@ export default function Footer() {
                       href={social.href}
                       target="_blank"
                       sx={{
-                        bgcolor: "rgba(255,255,255,0.05)",
-                        "&:hover": {
-                          bgcolor: "primary.main",
-                          transform: "translateY(-3px)",
-                        },
+                        bgcolor: "hsla(236, 66%, 31%, 0.05)",
+
                         transition: "all 0.3s ease",
                       }}
                     >
@@ -235,7 +234,7 @@ export default function Footer() {
                 <Box>
                   <Typography fontWeight={600}>Email</Typography>
                   <Link
-                    href="mailto:ubaid.udr@gmail.com"
+                    href="mailto:ksaqlan429@gmail.com"
                     sx={{
                       color: "text.secondary",
                       fontSize: "0.9rem",
@@ -243,7 +242,7 @@ export default function Footer() {
                       "&:hover": { color: "primary.main" },
                     }}
                   >
-                    ubaid.udr@gmail.com
+                    ksaqlan429@gmail.com
                   </Link>
                 </Box>
               </Box>
