@@ -15,6 +15,8 @@ import {
   Stack,
   Typography,
   alpha,
+ 
+  Grid,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
@@ -28,14 +30,15 @@ export default function Hero() {
     <Box
       id="hero"
       sx={{
-        minHeight: "100vh",
+        minHeight: { xs: "auto", sm: "90vh", md: "100vh" },
         display: "flex",
         alignItems: "center",
         position: "relative",
         overflow: "hidden",
-        pt: { xs: 10, md: 0 },
+        pt: { xs: 8, sm: 10, md: 0 },
+        pb: { xs: 6, sm: 8, md: 0 },
         bgcolor: "background.default",
-        marginTop: 7,
+        marginTop: { xs: 4, sm: 5, md: 7 },
       }}
     >
       <ParticlesBackground />
@@ -46,7 +49,7 @@ export default function Hero() {
             display: "grid",
             gridTemplateColumns: { xs: "1fr", md: "1.1fr 0.9fr" },
             alignItems: "center",
-            gap: { xs: 6, md: 10 },
+            gap: { xs: 6, sm: 8, md: 10, lg: 12 },
             position: "relative",
             zIndex: 1,
           }}
@@ -60,23 +63,32 @@ export default function Hero() {
             {/* <Chip
               label="🚀 MERN Stack Developer"
               sx={{
-                mb: 3,
+                mb: { xs: 2, sm: 3 },
                 fontWeight: 600,
-                px: 1.5,
-                fontSize: "0.9rem",
+                px: { xs: 1, sm: 1.5 },
+                py: { xs: 0.5, sm: 0.75 },
+                fontSize: { xs: "0.75rem", sm: "0.85rem", md: "0.9rem" },
                 bgcolor: alpha(theme.palette.primary.main, 0.15),
                 color: "primary.main",
                 borderRadius: 2,
+                display: { xs: "none", sm: "inline-flex" },
               }}
             /> */}
 
             <Typography
               sx={{
-                fontSize: { xs: "2.6rem", sm: "3.4rem", md: "3rem" },
-                fontWeight: 900,
-                lineHeight: 1.1,
-                mb: 2,
+                fontSize: {
+                  xs: "2rem",
+                  sm: "2.5rem",
+                  md: "2.8rem",
+                  lg: "3.2rem",
+                  xl: "3.5rem",
+                },
+                fontWeight: 800,
+                lineHeight: { xs: 1.2, sm: 1.1 },
+                mb: { xs: 1, sm: 2 },
                 color: "text.primary",
+                textAlign: { xs: "center", md: "left" },
               }}
             >
               Mohammad Saqlain
@@ -84,10 +96,16 @@ export default function Hero() {
 
             <Typography
               sx={{
-                fontSize: { xs: "1.4rem", md: "2rem" },
+                fontSize: {
+                  xs: "1.2rem",
+                  sm: "1.5rem",
+                  md: "1.8rem",
+                  lg: "2rem",
+                },
                 fontWeight: 700,
                 color: "primary.main",
-                mb: 3,
+                mb: { xs: 2, sm: 3 },
+                textAlign: { xs: "center", md: "left" },
               }}
             >
               Full Stack Developer
@@ -95,11 +113,13 @@ export default function Hero() {
 
             <Typography
               sx={{
-                fontSize: "1.1rem",
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
                 color: "text.secondary",
                 maxWidth: 600,
-                lineHeight: 1.8,
-                mb: 5,
+                lineHeight: { xs: 1.6, sm: 1.7, md: 1.8 },
+                mb: { xs: 3, sm: 4, md: 5 },
+                textAlign: { xs: "center", md: "left" },
+                px: { xs: 1, sm: 0 },
               }}
             >
               Detail-oriented MERN Stack Developer with 2+ years of experience
@@ -108,18 +128,26 @@ export default function Hero() {
               Mohanlal Sukhadia University.
             </Typography>
 
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              spacing={2}
+              sx={{
+                justifyContent: { xs: "center", md: "flex-start" },
+                alignItems: { xs: "stretch", sm: "center" },
+                mb: { xs: 4, sm: 5 },
+              }}
+            >
               <Button
                 variant="contained"
                 size="large"
                 href="#projects"
                 endIcon={<ArrowForwardIcon />}
                 sx={{
-                  px: 4,
-                  py: 1.8,
+                  px: { xs: 2, sm: 3, md: 4 },
+                  py: { xs: 1.2, sm: 1.5, md: 1.8 },
                   borderRadius: 3,
                   fontWeight: 700,
-                  fontSize: "1rem",
+                  fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
                   bgcolor: "primary.main",
                   color: "white",
                   boxShadow: `0 4px 20px ${alpha(
@@ -134,6 +162,7 @@ export default function Hero() {
                     )}`,
                     transform: "translateY(-2px)",
                   },
+                  minWidth: { xs: "100%", sm: "auto" },
                 }}
               >
                 View Projects
@@ -146,11 +175,11 @@ export default function Hero() {
                 download
                 startIcon={<DownloadIcon />}
                 sx={{
-                  px: 4,
-                  py: 1.8,
+                  px: { xs: 2, sm: 3, md: 4 },
+                  py: { xs: 1.2, sm: 1.5, md: 1.8 },
                   borderRadius: 3,
                   fontWeight: 700,
-                  fontSize: "1rem",
+                  fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
                   borderWidth: 2,
                   borderColor: "primary.main",
                   color: "primary.main",
@@ -161,6 +190,7 @@ export default function Hero() {
                     bgcolor: alpha(theme.palette.primary.main, 0.1),
                     transform: "translateY(-2px)",
                   },
+                  minWidth: { xs: "100%", sm: "auto" },
                 }}
               >
                 Download Resume
@@ -168,43 +198,87 @@ export default function Hero() {
             </Stack>
 
             {/* STATS */}
-            <Stack direction="row" spacing={4} mt={7} flexWrap="wrap">
+            <Grid
+              container
+              direction="row"
+              spacing={{ xs: 1, sm: 2, md: 3, lg: 4 }}
+              mt={{ xs: 4, sm: 5, md: 6, lg: 7 }}
+              flexWrap="wrap"
+              justifyContent={{ xs: "space-between", sm: "flex-start" }}
+              sx={{
+                "& > *": {
+                  flex: { xs: "1 1 30%", sm: "0 1 auto" },
+                  maxWidth: { xs: "31%", sm: "none" },
+                  minWidth: { xs: "90px", sm: "110px", md: "120px" },
+                },
+              }}
+            >
               {[
                 { value: "2+", label: "Years Experience" },
                 { value: "5+", label: "Live Projects" },
                 { value: "BA", label: "Currently Pursuing" },
               ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.1 }}
-                >
-                  <Box
-                    sx={{
-                      p: 2,
-                      borderRadius: 2,
-                      bgcolor: alpha(theme.palette.primary.main, 0.05),
-                      border: `1px solid ${alpha(
-                        theme.palette.primary.main,
-                        0.1
-                      )}`,
-                    }}
+                <Grid size={4} key={i}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + i * 0.1 }}
                   >
-                    <Typography
-                      variant="h4"
-                      fontWeight={800}
-                      color="primary.main"
+                    <Box
+                      sx={{
+                        p: { xs: 1, sm: 1.5, md: 2 },
+                        textAlign: "center",
+                        borderRadius: 2,
+                        bgcolor: alpha(theme.palette.primary.main, 0.05),
+                        border: `1px solid ${alpha(
+                          theme.palette.primary.main,
+                          0.1
+                        )}`,
+                        minHeight: { xs: "70px", sm: "80px", md: "90px" },
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
                     >
-                      {stat.value}
-                    </Typography>
-                    <Typography color="text.secondary" variant="body2">
-                      {stat.label}
-                    </Typography>
-                  </Box>
-                </motion.div>
+                      <Typography
+                        variant="h4"
+                        sx={{
+                          fontSize: {
+                            xs: "1.4rem",
+                            sm: "1.6rem",
+                            md: "1.875rem",
+                            lg: "2.125rem",
+                          },
+                          fontWeight: 800,
+                          lineHeight: 1,
+                          mb: { xs: 0.5, sm: 0.75 },
+                        }}
+                        color="primary.main"
+                      >
+                        {stat.value}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          fontSize: {
+                            xs: "0.65rem",
+                            sm: "0.75rem",
+                            md: "0.85rem",
+                          },
+                          fontWeight: 500,
+                          lineHeight: 1.2,
+                          textAlign: "center",
+                        }}
+                        color="text.secondary"
+                      >
+                        {stat.label}
+                      </Typography>
+                    </Box>
+                  </motion.div>
+                </Grid>
               ))}
-            </Stack>
+            </Grid>
           </motion.div>
 
           {/* RIGHT CARD */}
@@ -219,21 +293,23 @@ export default function Hero() {
                 bgcolor: alpha(theme.palette.background.paper, 0.95),
                 border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
                 borderRadius: 4,
-                p: 4,
+                p: { xs: 2.5, sm: 3, md: 4 },
                 textAlign: "center",
                 boxShadow: `0 20px 60px ${alpha(
                   theme.palette.primary.main,
                   0.15
                 )}`,
+                mx: { xs: "auto", md: 0 },
+                maxWidth: { xs: "320px", sm: "380px", md: "100%" },
               }}
             >
-              {/* Smaller Profile Picture */}
+              {/* Responsive Profile Picture */}
               <Box
                 sx={{
-                  width: 100,
-                  height: 100,
+                  width: { xs: 90, sm: 100, md: 110, lg: 120 },
+                  height: { xs: 90, sm: 100, md: 110, lg: 120 },
                   mx: "auto",
-                  mb: 3,
+                  mb: { xs: 2.5, sm: 3, md: 3.5 },
                   borderRadius: "50%",
                   overflow: "hidden",
                   border: `3px solid ${theme.palette.primary.main}`,
@@ -250,20 +326,23 @@ export default function Hero() {
                   fill
                   style={{ objectFit: "cover" }}
                   priority
-                  sizes="(max-width: 768px) 100px, 100px"
+                  sizes="(max-width: 600px) 90px, (max-width: 900px) 100px, 110px"
                 />
               </Box>
 
               <Typography
                 variant="h6"
-                fontWeight={800}
-                mb={3}
-                color="text.primary"
+                sx={{
+                  fontSize: { xs: "1.1rem", sm: "1.25rem", md: "1.5rem" },
+                  fontWeight: 800,
+                  mb: { xs: 2.5, sm: 3, md: 3.5 },
+                  color: "text.primary",
+                }}
               >
                 Contact Information
               </Typography>
 
-              <Stack spacing={2}>
+              <Stack spacing={{ xs: 1.5, sm: 2 }}>
                 {[
                   { icon: <LocationOnIcon />, text: "Udaipur, Rajasthan" },
                   { icon: <AddIcCallIcon />, text: "+91 8005769678" },
@@ -277,19 +356,45 @@ export default function Hero() {
                     key={i}
                     sx={{
                       display: "flex",
-                      alignItems: "center",
-                      gap: 1.5,
+                      alignItems: "flex-start",
+                      gap: { xs: 1, sm: 1.25, md: 1.5 },
                       justifyContent: "flex-start",
-                      pl: 2,
+                      pl: { xs: 1, sm: 1.5, md: 2 },
+                      pr: { xs: 1, sm: 0 },
                     }}
                   >
-                    <Box sx={{ color: "primary.main", minWidth: 24 }}>
+                    <Box
+                      sx={{
+                        color: "primary.main",
+                        minWidth: { xs: "20px", sm: "24px", md: "28px" },
+                        mt: 0.25,
+                        display: "flex",
+                        alignItems: "center",
+                        "& svg": {
+                          fontSize: {
+                            xs: "0.9rem",
+                            sm: "1rem",
+                            md: "1.1rem",
+                            lg: "1.25rem",
+                          },
+                        },
+                      }}
+                    >
                       {item.icon}
                     </Box>
                     <Typography
-                      fontSize="0.95rem"
-                      textAlign="left"
-                      color="text.primary"
+                      sx={{
+                        fontSize: {
+                          xs: "0.8rem",
+                          sm: "0.9rem",
+                          md: "1rem",
+                          lg: "1.05rem",
+                        },
+                        textAlign: "left",
+                        color: "text.primary",
+                        lineHeight: 1.4,
+                        wordBreak: "break-word",
+                      }}
                     >
                       {item.text}
                     </Typography>
@@ -297,8 +402,14 @@ export default function Hero() {
                 ))}
               </Stack>
 
-              {/* Social Links - Fixed Visibility */}
-              <Stack direction="row" spacing={2} justifyContent="center" mt={4}>
+              {/* Social Links */}
+              <Stack
+                direction={{ xs: "column", sm: "row" }}
+                spacing={{ xs: 1.5, sm: 2 }}
+                justifyContent="center"
+                mt={{ xs: 3, sm: 3.5, md: 4 }}
+                alignItems="center"
+              >
                 <Button
                   href="https://github.com/Saqlain-786"
                   target="_blank"
@@ -307,15 +418,21 @@ export default function Hero() {
                   sx={{
                     borderRadius: 2,
                     fontWeight: 600,
-                    fontSize: "0.9rem",
-                    px: 3,
-                    py: 1,
+                    fontSize: {
+                      xs: "0.8rem",
+                      sm: "0.85rem",
+                      md: "0.9rem",
+                      lg: "0.95rem",
+                    },
+                    px: { xs: 2, sm: 2.5, md: 3, lg: 3.5 },
+                    py: { xs: 0.75, sm: 0.9, md: 1, lg: 1.1 },
                     bgcolor: "#333",
                     color: "white",
                     "&:hover": {
                       bgcolor: "#000",
                       transform: "translateY(-2px)",
                     },
+                    minWidth: { xs: "100%", sm: "auto" },
                   }}
                 >
                   GitHub
@@ -328,28 +445,26 @@ export default function Hero() {
                   sx={{
                     borderRadius: 2,
                     fontWeight: 600,
-                    fontSize: "0.9rem",
-                    px: 3,
-                    py: 1,
+                    fontSize: {
+                      xs: "0.8rem",
+                      sm: "0.85rem",
+                      md: "0.9rem",
+                      lg: "0.95rem",
+                    },
+                    px: { xs: 2, sm: 2.5, md: 3, lg: 3.5 },
+                    py: { xs: 0.75, sm: 0.9, md: 1, lg: 1.1 },
                     bgcolor: "#0077B5",
                     color: "white",
                     "&:hover": {
                       bgcolor: "#005582",
                       transform: "translateY(-2px)",
                     },
+                    minWidth: { xs: "100%", sm: "auto" },
                   }}
                 >
                   LinkedIn
                 </Button>
               </Stack>
-
-              {/* Icon Buttons for Social Links */}
-              <Stack
-                direction="row"
-                spacing={1}
-                justifyContent="center"
-                mt={3}
-              ></Stack>
             </Box>
           </motion.div>
         </Box>
