@@ -32,11 +32,11 @@ export default function About() {
                 mb: 4,
               }}
             >
-              Detail-oriented MERN Stack Developer with 2+ years of Frontend
-              and 6+ months of Backend hands-on experience through internship
-              and junior developer role at Burak Information Technology. Skilled
-              in building scalable, responsive, and user-centric web
-              applications using React.js, Next.js, Node.js, and MongoDB. Strong
+              Detail-oriented MERN Stack Developer with 2+ years of Frontend and
+              6+ months of Backend hands-on experience through internship and
+              junior developer role at Burak Information Technology. Skilled in
+              building scalable, responsive, and user-centric web applications
+              using React.js, Next.js, Node.js, and MongoDB. Strong
               understanding of modern UI frameworks, API integration,
               authentication, and clean code practices. Passionate about
               learning and delivering high-quality solutions.
