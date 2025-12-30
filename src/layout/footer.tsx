@@ -54,9 +54,9 @@ export default function Footer() {
       sx={{
         bgcolor: "background.paper",
         borderTop: "1px solid rgba(255,255,255,0.05)",
-        pt: { xs: 6, md: 8 },
-        pb: 4,
-        mt: 8,
+        pt: 4,
+        pb: 2,
+        mt: 2,
       }}
     >
       <Container maxWidth="lg">
@@ -249,7 +249,7 @@ export default function Footer() {
           </Grid>
         </Grid>
 
-        <Divider sx={{ my: 6, borderColor: "rgba(255,255,255,0.05)" }} />
+        <Divider sx={{ my: 1, borderColor: "rgba(255,255,255,0.05)" }} />
 
         {/* Back to Top Button */}
         <motion.div
@@ -257,7 +257,7 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <Box sx={{ textAlign: "center", mt: 4 }}>
+          <Box sx={{ textAlign: "center" }}>
             <Button
               href="#hero"
               variant="outlined"

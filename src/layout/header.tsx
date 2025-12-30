@@ -2,18 +2,19 @@
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
-    AppBar,
-    Box,
-    Button,
-    Container,
-    Drawer,
-    IconButton,
-    List,
-    ListItem,
-    ListItemButton,
-    ListItemText,
-    Toolbar,
-    useScrollTrigger,
+  AppBar,
+  Box,
+  Button,
+  Container,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Stack,
+  Toolbar,
+  useScrollTrigger,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -39,20 +40,24 @@ export default function Header() {
   };
 
   const drawer = (
-    <Box sx={{ textAlign: "center", py: 4, bgcolor: "background.paper" }}>
-      <IconButton
-        onClick={handleDrawerToggle}
-        sx={{ position: "absolute", right: 16, top: 16 }}
-      >
-        <CloseIcon />
-      </IconButton>
+    <Box
+      sx={{
+        bgcolor: "white",
+        width: 200,
+      }}
+    >
+      <Stack direction="row" justifyContent="end" p={1}>
+        <IconButton onClick={handleDrawerToggle}>
+          <CloseIcon />
+        </IconButton>
+      </Stack>
       <List>
         {navItems.map((item) => (
           <ListItem key={item.label} disablePadding>
             <ListItemButton
               href={item.href}
               onClick={handleDrawerToggle}
-              sx={{ textAlign: "center" }}
+              sx={{ textAlign: "start", ml: 3 }}
             >
               <ListItemText
                 primary={item.label}
@@ -153,7 +158,7 @@ export default function Header() {
             </Box>
 
             <IconButton
-              color="inherit"
+              color="primary"
               edge="start"
               onClick={handleDrawerToggle}
               sx={{ display: { md: "none" } }}
