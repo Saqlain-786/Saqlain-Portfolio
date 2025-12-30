@@ -24,7 +24,7 @@ export const skills = {
     "REST APIs",
     "GraphQL",
   ],
-  "State & Data": ["SWR", "Axios", "Ridux"],
+  "State & Data": ["SWR", "Axios", "Redux","Redux Toolkit"],
   Animation: ["Framer Motion", "React Spring", "CSS Animations"],
   Tools: ["Git", "GitHub", "VS Code", "REST Client", "JWT Authentication"],
 };
