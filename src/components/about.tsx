@@ -79,7 +79,7 @@ export default function About() {
                   {[
                     "MERN Stack Expert",
                     "API Integration",
-                    "UI/UX Focused",
+                    "UI/UX Focused ",
                     "Clean Code Practices",
                   ].map((skill, index) => (
                     <Grid size={{ xs: 12,sm:12,md:6,lg:6 }} key={index} >
