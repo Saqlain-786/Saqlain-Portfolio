@@ -1,26 +1,37 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<svg
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background -->
+  <rect width="512" height="512" rx="110" fill="#0F172A" />
+
+  <!-- Gradient -->
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:1" />
+    <linearGradient id="msGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#22D3EE" />
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="512" height="512" rx="120" fill="#0F172A"/>
-
-  <!-- Text -->
+  <!-- MS Text -->
   <text
     x="50%"
     y="55%"
     text-anchor="middle"
     dominant-baseline="middle"
     font-size="220"
-    font-family="Poppins, Inter, Arial, sans-serif"
-    font-weight="700"
-    fill="url(#grad)"
-    letter-spacing="-10"
+    font-weight="800"
+    font-family="Inter, Arial, sans-serif"
+    fill="url(#msGradient)"
+    letter-spacing="-12"
   >
-    UA
+    MS
   </text>
+
+  <!-- Small tech dots -->
+  <circle cx="160" cy="360" r="6" fill="#22D3EE" />
+  <circle cx="190" cy="380" r="4" fill="#6366F1" />
+  <circle cx="220" cy="360" r="5" fill="#22D3EE" />
 </svg>
