@@ -14,6 +14,7 @@ import {
   ListItemText,
   Stack,
   Toolbar,
+  Typography,
   useScrollTrigger,
 } from "@mui/material";
 import { motion } from "framer-motion";
@@ -44,9 +45,43 @@ export default function Header() {
       sx={{
         bgcolor: "white",
         width: 200,
+        height: "100%",
       }}
     >
-      <Stack direction="row" justifyContent="end" p={1}>
+      <Stack direction="row" justifyContent="space-between" p={2}>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+        >
+          <Box
+            component="a"
+            href="/"
+            sx={{
+              fontSize: "0.9rem",
+              fontWeight: 800,
+              color: "primary.main",
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+            }}
+          >
+            <Box
+              component="span"
+              sx={{
+                width: 8,
+                height: 8,
+                bgcolor: "primary.main",
+                borderRadius: "50%",
+              }}
+            />
+            MS
+          </Box>
+          <Typography component="p" variant="body2" fontFamily="-apple-system" fontWeight={600}>
+            Mohammad Saqlain
+          </Typography>
+        </motion.div>
+
         <IconButton onClick={handleDrawerToggle}>
           <CloseIcon />
         </IconButton>
